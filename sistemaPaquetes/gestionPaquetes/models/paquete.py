@@ -1,7 +1,8 @@
 from django.db import models
 
+
 # Create your models here.
-class Paquetes(models.Model):
+class Paquete(models.Model):
     TAMANO=[
         ("M", "Mensajereia"),
         ("B", "Basico"),
@@ -13,6 +14,7 @@ class Paquetes(models.Model):
     nombre_destinatario= models.CharField('destinatario', max_length=100, null=False, blank=False)
     fecha_creacion= models.DateField('fecha de creación', auto_now=False, auto_now_add=True)
     estado= models.BooleanField('en transito/ entregado',default=True)
-    peso=models.IntegerField('peso en kg',max_length=10)
+    peso=models.IntegerField('peso en kg')
     tamano= models.CharField('mensajeria/basico/sobredimensionado', max_length=1, choices=TAMANO,default="M")
     fecha_entrega= models.DateField('fecha de creación', auto_now=False, auto_now_add=True)
+    # todo devoluciones y detalles de devolucion numeros de telefono

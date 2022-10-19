@@ -1,6 +1,10 @@
 from django.contrib import admin
-
 # Register your models here.
-from gestionPaquetes.models import Paquetes
+from gestionPaquetes.models.paquete import Paquete
 
-admin.site.register(Paquetes)
+from .models.account import Account
+from .models.user import User
+
+admin.site.register(User)
+admin.site.register(Account)
+admin.site.register(Paquete)
